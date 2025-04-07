@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_USERNAME/flask-gpu-demo-gitops.git
+    repoURL: https://github.com/ryannix123/gpu-demo.git
     targetRevision: main
     path: manifests
   destination:
@@ -17,4 +17,4 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
