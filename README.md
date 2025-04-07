@@ -1,6 +1,6 @@
 # Flask GPU Demo - GitOps Deployment with ArgoCD
 
-This repository contains a GitOps-friendly deployment of the [flask-gpu-demo](https://quay.io/repository/ryan_nix/flask-gpu-demo) app using OpenShift and ArgoCD.
+This repository contains a GitOps-friendly deployment of the [flask-gpu-demo](https://quay.io/repository/ryan_nix/flask-gpu-demo) app using OpenShift and ArgoCD. Its target use case is Red Hat Advanced Cluster Management (RHACM)
 
 ## 📦 Components
 
@@ -32,4 +32,3 @@ This repository contains a GitOps-friendly deployment of the [flask-gpu-demo](ht
 ## 📋 Notes
 
 - The app expects a `/healthz` endpoint; update probes if needed.
-- Default GPU request is 1 (`nvidia.com/gpu: 1`)
