@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-gpu-demo
+  namespace: flask-gpu-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-gpu-demo
+  template:
+    metadata:
+      labels:
+        app: flask-gpu-demo
+    spec:
+      containers:
+        - name: flask-gpu-demo
+          image: quay.io/ryan_nix/flask-gpu-demo:latest
+          ports:
+            - containerPort: 5000
+          resources:
+            limits:
+              nvidia.com/gpu: 1
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+      nodeSelector:
+        nvidia.com/gpu.present: "true"
