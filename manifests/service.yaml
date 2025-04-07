@@ -7,7 +7,7 @@ spec:
   selector:
     app: flask-gpu-demo
   ports:
-  - name: http
+  - name: 8080-tcp
     protocol: TCP
-    port: 80
+    port: 8080
     targetPort: 8080
